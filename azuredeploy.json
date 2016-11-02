@@ -4,6 +4,7 @@
   "parameters": {
     "namePrefix": {
       "type": "string",
+      "maxLength": 8,
       "metadata": {
         "description": "Naming prefix for each new resource created. 8-char max, lowercase alphanumeric"
       }
