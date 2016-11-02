@@ -1,64 +1,45 @@
 ﻿{
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
-
   "parameters": {
-
     "sqlWitnessVMName": {
       "type": "string"
     },
-
     "domainName": {
       "type": "string"
     },
-
     "sharePath": {
       "type": "string"
     },
-
     "adminUsername": {
       "type": "string"
     },
-
     "adminPassword": {
       "type": "securestring"
     },
-
     "_artifactsLocation": {
       "type": "string"
     },
-
     "_artifactsLocationSasToken": {
       "type": "string"
     }
-
   },
-
   "variables": {
-
-    "apiVersion": "2015-01-01",
-    "apiVersionNetworks": "2015-06-15",
-    "apiVersionVirtualMachines": "2015-06-15",
-    "apiVersionVMExtensions": "2015-06-15",
-    "apiVersionStorage": "2015-06-15",
-
     "fswModulesURL": "[concat(parameters('_artifactsLocation'),'/dsc/create-file-share-witness.ps1.zip',parameters('_artifactsLocationSasToken'))]",
     "fswConfigurationFunction": "CreateFileShareWitness.ps1\\CreateFileShareWitness"
   },
-
   "resources": [
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(parameters('sqlWitnessVMName'),'/CreateFileShareWitness')]",
-      "apiVersion": "[variables('apiVersionVMExtensions')]",
+      "apiVersion": "2015-06-15",
       "location": "[resourceGroup().location]",
-      "dependsOn": [
-      ],
+      "dependsOn": [],
       "properties": {
         "publisher": "Microsoft.Powershell",
         "type": "DSC",
         "typeHandlerVersion": "2.17",
-        "autoUpgradeMinorVersion": false,
+        "autoUpgradeMinorVersion": true,
         "settings": {
           "wmfVersion": "5.0",
           "modulesUrl": "[variables('fswModulesURL')]",
@@ -70,7 +51,6 @@
               "userName": "[parameters('adminUserName')]",
               "password": "PrivateSettingsRef:adminPassword"
             }
-
           }
         },
         "protectedSettings": {
@@ -80,10 +60,6 @@
         }
       }
     }
-
   ],
-
-  "outputs": {
-  }
-  
+  "outputs": {}
 }
