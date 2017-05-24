@@ -3,25 +3,41 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "namePrefix": {
-      "value": "GEN-UNIQUE-8"
+      "value": "sql02"
     },
     "existingDomainName": {
-      "value": "contoso.com"
+      "value": "poc.lab"
     },
     "adminUsername": {
-      "value": "AzureAdmin"
+      "value": "wkpocadmin"
     },
     "adminPassword": {
-      "value": "GEN-PASSWORD"
+      "value": "P@ssword4wkpoc"
     },
     "sqlServerServiceAccountUserName": {
-      "value": "sqlservice"
+      "value": "sql02"
     },
     "sqlServerServiceAccountPassword": {
-      "value": "GEN-PASSWORD"
+      "value": "P@ssword4wkpoc"
     },
     "existingSqlSubnetName": {
       "value": "default"
     },
-  }
+    "sqlVMSize": {
+      "value": "Standard_DS3_V2"
+    },  
+    "sqlWitnessVMSize": {
+      "value": "Standard_DS1_V2"
+    }, 
+    "existingVirtualNetworkId": {
+      "value": "/subscriptions/870f5814-31c9-4a4f-9a74-587ef79d87e0/resourceGroups/wkdbapoc/providers/Microsoft.Network/virtualNetworks/wkdbapoc-vnet"
+    },  
+    "existingAdPDCVMName": {
+        "value": "DC1"
+    },
+    "sqlLBIPAddress": {
+        "value": "10.3.0.101"
+    }
+    
+    }
 }
