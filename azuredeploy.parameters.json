@@ -3,22 +3,22 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "namePrefix": {
-      "value": "sql02"
+      "value": "sql"
     },
     "existingDomainName": {
-      "value": "poc.lab"
+      "value": "contoso"
     },
     "adminUsername": {
-      "value": "wkpocadmin"
+      "value": "admin"
     },
     "adminPassword": {
-      "value": "P@ssword4wkpoc"
+      "value": "Password"
     },
     "sqlServerServiceAccountUserName": {
-      "value": "sql02"
+      "value": "sqlsvc"
     },
     "sqlServerServiceAccountPassword": {
-      "value": "P@ssword4wkpoc"
+      "value": "Password"
     },
     "existingSqlSubnetName": {
       "value": "default"
@@ -30,13 +30,13 @@
       "value": "Standard_DS1_V2"
     }, 
     "existingVirtualNetworkId": {
-      "value": "/subscriptions/870f5814-31c9-4a4f-9a74-587ef79d87e0/resourceGroups/wkdbapoc/providers/Microsoft.Network/virtualNetworks/wkdbapoc-vnet"
+      "value": "/subscriptions/..."
     },  
     "existingAdPDCVMName": {
         "value": "DC1"
     },
     "sqlLBIPAddress": {
-        "value": "10.3.0.101"
+        "value": "10.0.0.0"
     }
     
     }
